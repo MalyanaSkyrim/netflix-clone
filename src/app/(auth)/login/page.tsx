@@ -3,10 +3,18 @@ import { Input } from "@/components/ui/input";
 import Link from "next/link";
 import GithubSignInButton from "@/components/GithubSignInButton";
 import GoogleSignInButton from "@/components/GoogleSignInButton";
+import { getServerSession } from "next-auth";
+import { redirect } from "next/navigation";
+import { authOptions } from "@/lib/auth/nextAuthOptions";
 
 export default async function Login() {
+  const session = await getServerSession(authOptions);
+
+  if (session) {
+    redirect("/home");
+  }
   return (
-    <div className="mt-24  rounded bg-black/80 py-10 px-6 md:mt-0 md:max-w-sm md:px-14">
+    <div className="mt-24 rounded bg-black/80 py-10 px-6 md:mt-0 md:max-w-sm md:px-14 min-w-[370px]">
       <form method="post" action="/api/auth/signin">
         <h1 className="text-3xl font-semibold text-white">Log in</h1>
         <div className="space-y-4 mt-5">
