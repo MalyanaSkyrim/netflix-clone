@@ -13,7 +13,7 @@ export default async function HomeLayout({
   const session = await getServerSession(authOptions);
 
   if (!session) {
-    return redirect("/login");
+    return redirect("/signin");
   }
 
   return (

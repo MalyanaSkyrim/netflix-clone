@@ -5,7 +5,7 @@ const AuthLayout = ({ children }: { children: ReactNode }) => {
   return (
     <div className="relative flex h-screen w-screen flex-col bg-black md:items-center md:justify-center md:bg-transparent">
       <Image
-        src="/login_background.jpg"
+        src="/signin_background.jpg"
         alt="image"
         className="hidden sm:block sm:object-cover -z-10 brightness-50"
         fill
