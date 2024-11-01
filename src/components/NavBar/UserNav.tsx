@@ -19,8 +19,6 @@ export default function UserNav() {
   const user = session?.user ?? {};
   const { image, name, email } = user;
 
-  console.log("sky", { image });
-
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
